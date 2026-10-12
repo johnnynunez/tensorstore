@@ -291,6 +291,9 @@ def get_supported_machine_archs(version, operating_system):
             # Linux arm64 was supported since 3.4.0.
             # Darwin arm64 was supported since 4.1.0.
             supported_machines.append("arm64")
+        if operating_system == "windows" and major >= 6:
+            # Windows arm64 was supported since 6.0.0.
+            supported_machines.append("arm64")
         if (
             operating_system == "linux"
             and (major > 6 or (major == 6 and minor >= 1))
